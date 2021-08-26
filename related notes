@@ -1,0 +1,21 @@
+关系管理(Apis)
+	查询
+	绑定（增）和刷新ESL
+	解绑（删）和清空ESL
+ESL 标签的自动初始化（数据提前录入Database，遍历数据进行ESL模板刷新）
+	关系操作（集成ESL按钮定义）
+	左按钮操作（刷新ESL模板） - Api?
+	右按钮操作（刷新ESL模板） - Api?
+定时任务
+	按钮操作处理+ESL模板刷新 ?
+	
+	
+Alias :shz-esl-test-db.apa.zf-world.com\TEST
+
+Database: FIA_ESL_Test
+
+Account: ESL_Test
+
+Password : SHZ_esl_app_2021
+
+Permission:DB_Owner

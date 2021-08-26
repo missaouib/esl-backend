@@ -1,0 +1,6 @@
+how to install ubuntu windows sub in zf windows10
+
+request an administrator account
+use choco search and install ubuntu XX
+if ubuntu install failed, see https://github.com/MicrosoftDocs/WSL/issues/547 use reg update to solve the problem
+ 
