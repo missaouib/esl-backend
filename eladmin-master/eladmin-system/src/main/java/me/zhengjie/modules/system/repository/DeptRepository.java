@@ -47,7 +47,7 @@ public interface DeptRepository extends JpaRepository<Dept, Long>, JpaSpecificat
      * @param roleId 角色ID
      * @return /
      */
-    @Query(value = "select d.* from sys_dept d, sys_roles_depts r where " +
+    @Query(value = "select d.* from eladmin.sys_dept d, eladmin.sys_roles_depts r where " +
             "d.dept_id = r.dept_id and r.role_id = ?1", nativeQuery = true)
     Set<Dept> findByRoleId(Long roleId);
 

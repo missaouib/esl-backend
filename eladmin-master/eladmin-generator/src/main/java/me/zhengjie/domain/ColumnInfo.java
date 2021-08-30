@@ -41,21 +41,27 @@ public class ColumnInfo implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "表名")
     private String tableName;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "数据库字段名称")
     private String columnName;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "数据库字段类型")
     private String columnType;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "数据库字段键类型")
     private String keyType;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "字段额外的参数")
     private String extra;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "数据库字段描述")
     private String remark;
 
@@ -68,15 +74,19 @@ public class ColumnInfo implements Serializable {
     @ApiModelProperty(value = "是否表单显示")
     private Boolean formShow;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "表单类型")
     private String formType;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "查询 1:模糊 2：精确")
     private String queryType;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "字典名称")
     private String dictName;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "日期注解")
     private String dateAnnotation;
 

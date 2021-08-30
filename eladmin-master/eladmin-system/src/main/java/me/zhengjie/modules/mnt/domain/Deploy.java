@@ -44,6 +44,7 @@ public class Deploy extends BaseEntity implements Serializable {
 	@ManyToMany
 	@ApiModelProperty(name = "服务器", hidden = true)
 	@JoinTable(name = "mnt_deploy_server",
+			schema = "eladmin",
 			joinColumns = {@JoinColumn(name = "deploy_id",referencedColumnName = "deploy_id")},
 			inverseJoinColumns = {@JoinColumn(name = "server_id",referencedColumnName = "server_id")})
 	private Set<ServerDeploy> deploys;

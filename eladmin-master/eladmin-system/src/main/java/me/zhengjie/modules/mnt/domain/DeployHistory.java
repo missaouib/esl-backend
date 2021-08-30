@@ -40,9 +40,11 @@ public class DeployHistory implements Serializable {
 	@ApiModelProperty(value = "ID", hidden = true)
     private String id;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "应用名称")
     private String appName;
 
+    @Column(columnDefinition ="nvarchar(255)")
 	@ApiModelProperty(value = "IP")
     private String ip;
 
@@ -50,6 +52,7 @@ public class DeployHistory implements Serializable {
 	@ApiModelProperty(value = "部署时间")
     private Timestamp deployDate;
 
+    @Column(columnDefinition ="nvarchar(255)")
 	@ApiModelProperty(value = "部署者")
     private String deployUser;
 

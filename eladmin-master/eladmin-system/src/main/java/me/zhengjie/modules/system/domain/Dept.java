@@ -52,6 +52,7 @@ public class Dept extends BaseEntity implements Serializable {
     @ApiModelProperty(value = "排序")
     private Integer deptSort;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @NotBlank
     @ApiModelProperty(value = "部门名称")
     private String name;

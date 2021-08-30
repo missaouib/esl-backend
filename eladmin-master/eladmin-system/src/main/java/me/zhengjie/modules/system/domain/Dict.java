@@ -46,10 +46,12 @@ public class Dict extends BaseEntity implements Serializable {
     @OneToMany(mappedBy = "dict",cascade={CascadeType.PERSIST,CascadeType.REMOVE})
     private List<DictDetail> dictDetails;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @NotBlank
     @ApiModelProperty(value = "名称")
     private String name;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "描述")
     private String description;
 }

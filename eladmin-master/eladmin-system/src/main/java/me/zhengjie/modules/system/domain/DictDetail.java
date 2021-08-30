@@ -46,9 +46,11 @@ public class DictDetail extends BaseEntity implements Serializable {
     @ApiModelProperty(value = "字典", hidden = true)
     private Dict dict;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "字典标签")
     private String label;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "字典值")
     private String value;
 

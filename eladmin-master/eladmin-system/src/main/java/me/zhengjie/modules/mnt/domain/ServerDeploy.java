@@ -41,18 +41,22 @@ public class ServerDeploy extends BaseEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "服务器名称")
     private String name;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "IP")
     private String ip;
 
     @ApiModelProperty(value = "端口")
     private Integer port;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "账号")
     private String account;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "密码")
     private String password;
 

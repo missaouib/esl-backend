@@ -42,6 +42,7 @@ public class Job extends BaseEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @NotBlank
     @ApiModelProperty(value = "岗位名称")
     private String name;

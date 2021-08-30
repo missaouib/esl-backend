@@ -45,31 +45,39 @@ public class GenConfig implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @NotBlank
     @ApiModelProperty(value = "表名")
     private String tableName;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "接口名称")
     private String apiAlias;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @NotBlank
     @ApiModelProperty(value = "包路径")
     private String pack;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @NotBlank
     @ApiModelProperty(value = "模块名")
     private String moduleName;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @NotBlank
     @ApiModelProperty(value = "前端文件路径")
     private String path;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "前端文件路径")
     private String apiPath;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "作者")
     private String author;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "表前缀")
     private String prefix;
 

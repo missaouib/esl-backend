@@ -49,28 +49,33 @@ public class Menu extends BaseEntity implements Serializable {
     @ApiModelProperty(value = "菜单角色")
     private Set<Role> roles;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "菜单标题")
     private String title;
 
-    @Column(name = "name")
+    @Column(name = "name", columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "菜单组件名称")
     private String componentName;
 
     @ApiModelProperty(value = "排序")
     private Integer menuSort = 999;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "组件路径")
     private String component;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "路由地址")
     private String path;
 
     @ApiModelProperty(value = "菜单类型，目录、菜单、按钮")
     private Integer type;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "权限标识")
     private String permission;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "菜单图标")
     private String icon;
 

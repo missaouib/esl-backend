@@ -74,7 +74,7 @@ public class User extends BaseEntity implements Serializable {
     private String username;
 
     @NotBlank
-    @Column(name = "nickName")
+    @Column(name = "nickName", columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "用户昵称")
     private String nickName;
 
@@ -89,7 +89,7 @@ public class User extends BaseEntity implements Serializable {
     @ApiModelProperty(value = "电话号码")
     private String phone;
 
-    @Column(name = "gender")
+    @Column(name = "gender", columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "用户性别")
     private String gender;
 

@@ -40,24 +40,30 @@ public class App extends BaseEntity implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+	@Column(columnDefinition ="nvarchar(255)")
 	@ApiModelProperty(value = "名称")
     private String name;
 
 	@ApiModelProperty(value = "端口")
 	private int port;
 
+	@Column(columnDefinition ="nvarchar(255)")
 	@ApiModelProperty(value = "上传路径")
 	private String uploadPath;
 
+	@Column(columnDefinition ="nvarchar(255)")
 	@ApiModelProperty(value = "部署路径")
 	private String deployPath;
 
+	@Column(columnDefinition ="nvarchar(255)")
 	@ApiModelProperty(value = "备份路径")
 	private String backupPath;
 
+	@Column(columnDefinition ="nvarchar(255)")
 	@ApiModelProperty(value = "启动脚本")
 	private String startScript;
 
+	@Column(columnDefinition ="nvarchar(255)")
 	@ApiModelProperty(value = "部署脚本")
 	private String deployScript;
 

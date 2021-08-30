@@ -39,27 +39,35 @@ public class Log  implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(columnDefinition ="nvarchar(255)")
     /** 操作用户 */
     private String username;
 
+    @Column(columnDefinition ="nvarchar(255)")
     /** 描述 */
     private String description;
 
+    @Column(columnDefinition ="nvarchar(255)")
     /** 方法名 */
     private String method;
 
+    @Column(columnDefinition ="nvarchar(255)")
     /** 参数 */
     private String params;
 
+    @Column(columnDefinition ="nvarchar(255)")
     /** 日志类型 */
     private String logType;
 
+    @Column(columnDefinition ="nvarchar(255)")
     /** 请求ip */
     private String requestIp;
 
+    @Column(columnDefinition ="nvarchar(255)")
     /** 地址 */
     private String address;
 
+    @Column(columnDefinition ="nvarchar(255)")
     /** 浏览器  */
     private String browser;
 

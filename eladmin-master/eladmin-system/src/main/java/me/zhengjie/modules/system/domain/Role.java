@@ -62,15 +62,18 @@ public class Role extends BaseEntity implements Serializable {
 
     @ManyToMany
     @JoinTable(name = "sys_roles_depts",
+            schema = "eladmin",
             joinColumns = {@JoinColumn(name = "role_id",referencedColumnName = "role_id")},
             inverseJoinColumns = {@JoinColumn(name = "dept_id",referencedColumnName = "dept_id")})
     @ApiModelProperty(value = "部门", hidden = true)
     private Set<Dept> depts;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @NotBlank
     @ApiModelProperty(value = "名称", hidden = true)
     private String name;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "数据权限，全部 、 本级 、 自定义")
     private String dataScope = DataScopeEnum.THIS_LEVEL.getValue();
 
@@ -78,6 +81,7 @@ public class Role extends BaseEntity implements Serializable {
     @ApiModelProperty(value = "级别，数值越小，级别越大")
     private Integer level = 3;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "描述")
     private String description;
 

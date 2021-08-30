@@ -35,19 +35,23 @@ import java.io.Serializable;
 public class Database extends BaseEntity implements Serializable {
 
     @Id
-    @Column(name = "db_id")
+    @Column(name = "db_id", columnDefinition ="nvarchar(255)")
 	@ApiModelProperty(value = "ID", hidden = true)
     private String id;
 
+    @Column(columnDefinition ="nvarchar(255)")
 	@ApiModelProperty(value = "数据库名称")
     private String name;
 
+    @Column(columnDefinition ="nvarchar(255)")
 	@ApiModelProperty(value = "数据库连接地址")
     private String jdbcUrl;
 
+    @Column(columnDefinition ="nvarchar(255)")
 	@ApiModelProperty(value = "数据库密码")
     private String pwd;
 
+    @Column(columnDefinition ="nvarchar(255)")
 	@ApiModelProperty(value = "用户名")
     private String userName;
 

@@ -37,24 +37,30 @@ public class QuartzLog implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "任务名称", hidden = true)
     private String jobName;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "bean名称", hidden = true)
     private String beanName;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "方法名称", hidden = true)
     private String methodName;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "参数", hidden = true)
     private String params;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "cron表达式", hidden = true)
     private String cronExpression;
 
     @ApiModelProperty(value = "状态", hidden = true)
     private Boolean isSuccess;
 
+    @Column(columnDefinition ="nvarchar(255)")
     @ApiModelProperty(value = "异常详情", hidden = true)
     private String exceptionDetail;
 
