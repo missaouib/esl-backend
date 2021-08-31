@@ -31,6 +31,11 @@ import './assets/icons' // icon
 import './router/index' // permission control
 import 'echarts-gl'
 
+// 2021-08-25 自定义theme
+import '../theme/index.css'
+import ElementUI from 'element-ui'
+Vue.use(ElementUI)
+
 Vue.use(checkPer)
 Vue.use(VueHighlightJS)
 Vue.use(mavonEditor)
