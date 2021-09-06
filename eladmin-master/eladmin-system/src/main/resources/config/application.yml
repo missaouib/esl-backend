@@ -17,6 +17,9 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+      ### This could be used to define naming rules for table, schema etc.
+#      naming:
+#        physical-strategy: me.zhengjie.config.jpa.DefaultNamingStrategy
     open-in-view: true
     properties:
       hibernate:

@@ -25,6 +25,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
+import static me.zhengjie.utils.JpaRepositoryUtil.SCHEMA_NAME_1;
+
 /**
 * @author zhanghouying
 * @date 2019-08-24
@@ -32,7 +34,7 @@ import java.sql.Timestamp;
 @Entity
 @Getter
 @Setter
-@Table(name="mnt_deploy_history", schema = "eladmin")
+@Table(name="mnt_deploy_history", schema = SCHEMA_NAME_1)
 public class DeployHistory implements Serializable {
 
     @Id

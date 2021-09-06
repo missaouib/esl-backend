@@ -25,6 +25,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
+import static me.zhengjie.utils.JpaRepositoryUtil.SCHEMA_NAME_1;
+
 /**
  * 邮件配置类，数据存覆盖式存入数据存
  * @author Zheng Jie
@@ -32,7 +34,7 @@ import java.io.Serializable;
  */
 @Entity
 @Data
-@Table(name = "tool_email_config", schema = "eladmin")
+@Table(name = "tool_email_config", schema = SCHEMA_NAME_1)
 public class EmailConfig implements Serializable {
 
     @Id

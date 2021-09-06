@@ -30,6 +30,7 @@ import java.time.LocalDate;
 import java.util.*;
 
 import static me.zhengjie.utils.FileUtil.SYS_TEM_DIR;
+import static me.zhengjie.utils.JpaRepositoryUtil.SCHEMA_NAME_1;
 
 /**
  * 代码生成
@@ -115,7 +116,7 @@ public class GenUtil {
         List<String> templates = getAdminTemplateNames();
         for (String templateName : templates) {
             Template template = engine.getTemplate("generator/admin/" + templateName + ".ftl");
-            String filePath = getAdminFilePath(templateName, genConfig, genMap.get("className").toString(), tempPath + "eladmin" + File.separator);
+            String filePath = getAdminFilePath(templateName, genConfig, genMap.get("className").toString(), tempPath + SCHEMA_NAME_1 + File.separator);
             assert filePath != null;
             File file = new File(filePath);
             // 如果非覆盖生成

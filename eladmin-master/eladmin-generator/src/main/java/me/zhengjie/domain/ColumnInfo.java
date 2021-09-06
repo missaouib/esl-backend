@@ -23,6 +23,8 @@ import me.zhengjie.utils.GenUtil;
 import javax.persistence.*;
 import java.io.Serializable;
 
+import static me.zhengjie.utils.JpaRepositoryUtil.SCHEMA_NAME_1;
+
 /**
  * 列的数据信息
  * @author Zheng Jie
@@ -32,7 +34,7 @@ import java.io.Serializable;
 @Setter
 @Entity
 @NoArgsConstructor
-@Table(name = "code_column_config", schema = "eladmin")
+@Table(name = "code_column_config", schema = SCHEMA_NAME_1)
 public class ColumnInfo implements Serializable {
 
     @Id

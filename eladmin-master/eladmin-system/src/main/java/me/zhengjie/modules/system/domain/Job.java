@@ -25,6 +25,8 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Objects;
 
+import static me.zhengjie.utils.JpaRepositoryUtil.SCHEMA_NAME_1;
+
 /**
 * @author Zheng Jie
 * @date 2019-03-29
@@ -32,7 +34,7 @@ import java.util.Objects;
 @Entity
 @Getter
 @Setter
-@Table(name="sys_job", schema = "eladmin")
+@Table(name="sys_job", schema = SCHEMA_NAME_1)
 public class Job extends BaseEntity implements Serializable {
 
     @Id

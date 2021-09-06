@@ -23,6 +23,8 @@ import me.zhengjie.base.BaseEntity;
 import javax.persistence.*;
 import java.io.Serializable;
 
+import static me.zhengjie.utils.JpaRepositoryUtil.SCHEMA_NAME_1;
+
 /**
 * @author Zheng Jie
 * @date 2019-09-05
@@ -30,7 +32,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @Entity
-@Table(name="tool_local_storage", schema = "eladmin")
+@Table(name="tool_local_storage", schema = SCHEMA_NAME_1)
 @NoArgsConstructor
 public class LocalStorage extends BaseEntity implements Serializable {
 

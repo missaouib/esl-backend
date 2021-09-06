@@ -26,6 +26,8 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.List;
 
+import static me.zhengjie.utils.JpaRepositoryUtil.SCHEMA_NAME_1;
+
 /**
 * @author Zheng Jie
 * @date 2019-04-10
@@ -33,7 +35,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@Table(name="sys_dict", schema = "eladmin")
+@Table(name="sys_dict", schema = SCHEMA_NAME_1)
 public class Dict extends BaseEntity implements Serializable {
 
     @Id

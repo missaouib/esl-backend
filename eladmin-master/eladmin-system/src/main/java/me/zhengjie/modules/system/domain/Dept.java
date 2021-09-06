@@ -27,6 +27,8 @@ import java.io.Serializable;
 import java.util.Objects;
 import java.util.Set;
 
+import static me.zhengjie.utils.JpaRepositoryUtil.SCHEMA_NAME_1;
+
 /**
 * @author Zheng Jie
 * @date 2019-03-25
@@ -34,7 +36,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-@Table(name="sys_dept", schema = "eladmin")
+@Table(name="sys_dept", schema = SCHEMA_NAME_1)
 public class Dept extends BaseEntity implements Serializable {
 
     @Id

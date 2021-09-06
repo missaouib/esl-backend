@@ -22,13 +22,15 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
+import static me.zhengjie.utils.JpaRepositoryUtil.SCHEMA_NAME_1;
+
 /**
  * @author Zheng Jie
  * @date 2019-01-07
  */
 @Entity
 @Data
-@Table(name = "sys_quartz_log", schema = "eladmin")
+@Table(name = "sys_quartz_log", schema = SCHEMA_NAME_1)
 public class QuartzLog implements Serializable {
 
     @Id

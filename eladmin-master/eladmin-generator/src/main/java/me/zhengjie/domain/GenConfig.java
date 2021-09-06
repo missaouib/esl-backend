@@ -23,6 +23,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
+import static me.zhengjie.utils.JpaRepositoryUtil.SCHEMA_NAME_1;
+
 /**
  * 代码生成配置
  * @author Zheng Jie
@@ -32,7 +34,7 @@ import java.io.Serializable;
 @Setter
 @Entity
 @NoArgsConstructor
-@Table(name = "code_gen_config", schema = "eladmin")
+@Table(name = "code_gen_config", schema = SCHEMA_NAME_1)
 public class GenConfig implements Serializable {
 
     public GenConfig(String tableName) {

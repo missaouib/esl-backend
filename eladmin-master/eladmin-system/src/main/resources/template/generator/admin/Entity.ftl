@@ -44,7 +44,7 @@ import java.io.Serializable;
 **/
 @Entity
 @Data
-@Table(name="${tableName}", schema = "eladmin")
+@Table(name="${tableName}", schema = SCHEMA_NAME_1)
 public class ${className} implements Serializable {
 <#if columns??>
     <#list columns as column>

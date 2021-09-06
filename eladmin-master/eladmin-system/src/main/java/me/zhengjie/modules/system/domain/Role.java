@@ -29,6 +29,8 @@ import java.io.Serializable;
 import java.util.Objects;
 import java.util.Set;
 
+import static me.zhengjie.utils.JpaRepositoryUtil.SCHEMA_NAME_1;
+
 /**
  * 角色
  * @author Zheng Jie
@@ -37,7 +39,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@Table(name = "sys_role", schema = "eladmin")
+@Table(name = "sys_role", schema = SCHEMA_NAME_1)
 public class Role extends BaseEntity implements Serializable {
 
     @Id
@@ -54,7 +56,7 @@ public class Role extends BaseEntity implements Serializable {
 
     @ManyToMany
     @JoinTable(name = "sys_roles_menus",
-            schema = "eladmin",
+            schema = SCHEMA_NAME_1,
             joinColumns = {@JoinColumn(name = "role_id",referencedColumnName = "role_id")},
             inverseJoinColumns = {@JoinColumn(name = "menu_id",referencedColumnName = "menu_id")})
     @ApiModelProperty(value = "菜单", hidden = true)
@@ -62,7 +64,7 @@ public class Role extends BaseEntity implements Serializable {
 
     @ManyToMany
     @JoinTable(name = "sys_roles_depts",
-            schema = "eladmin",
+            schema = SCHEMA_NAME_1,
             joinColumns = {@JoinColumn(name = "role_id",referencedColumnName = "role_id")},
             inverseJoinColumns = {@JoinColumn(name = "dept_id",referencedColumnName = "dept_id")})
     @ApiModelProperty(value = "部门", hidden = true)

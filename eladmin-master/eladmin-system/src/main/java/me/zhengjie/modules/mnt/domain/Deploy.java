@@ -25,6 +25,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
+import static me.zhengjie.utils.JpaRepositoryUtil.SCHEMA_NAME_1;
+
 /**
 * @author zhanghouying
 * @date 2019-08-24
@@ -32,7 +34,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-@Table(name="mnt_deploy", schema = "eladmin")
+@Table(name="mnt_deploy", schema = SCHEMA_NAME_1)
 public class Deploy extends BaseEntity implements Serializable {
 
     @Id
@@ -44,7 +46,7 @@ public class Deploy extends BaseEntity implements Serializable {
 	@ManyToMany
 	@ApiModelProperty(name = "服务器", hidden = true)
 	@JoinTable(name = "mnt_deploy_server",
-			schema = "eladmin",
+			schema = SCHEMA_NAME_1,
 			joinColumns = {@JoinColumn(name = "deploy_id",referencedColumnName = "deploy_id")},
 			inverseJoinColumns = {@JoinColumn(name = "server_id",referencedColumnName = "server_id")})
 	private Set<ServerDeploy> deploys;

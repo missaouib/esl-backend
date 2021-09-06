@@ -30,6 +30,7 @@ import java.util.Date;
 import java.util.Objects;
 import java.util.Set;
 
+import static me.zhengjie.utils.JpaRepositoryUtil.SCHEMA_NAME_1;
 /**
  * @author Zheng Jie
  * @date 2018-11-22
@@ -37,7 +38,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-@Table(name="sys_user", schema = "eladmin")
+@Table(name="sys_user", schema = SCHEMA_NAME_1)
 public class User extends BaseEntity implements Serializable {
 
     @Id
@@ -50,7 +51,7 @@ public class User extends BaseEntity implements Serializable {
     @ManyToMany
     @ApiModelProperty(value = "用户角色")
     @JoinTable(name = "sys_users_roles",
-            schema = "eladmin",
+            schema = SCHEMA_NAME_1,
             joinColumns = {@JoinColumn(name = "user_id",referencedColumnName = "user_id")},
             inverseJoinColumns = {@JoinColumn(name = "role_id",referencedColumnName = "role_id")})
     private Set<Role> roles;
@@ -58,7 +59,7 @@ public class User extends BaseEntity implements Serializable {
     @ManyToMany
     @ApiModelProperty(value = "用户岗位")
     @JoinTable(name = "sys_users_jobs",
-            schema = "eladmin",
+            schema = SCHEMA_NAME_1,
             joinColumns = {@JoinColumn(name = "user_id",referencedColumnName = "user_id")},
             inverseJoinColumns = {@JoinColumn(name = "job_id",referencedColumnName = "job_id")})
     private Set<Job> jobs;

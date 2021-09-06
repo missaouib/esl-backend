@@ -24,6 +24,8 @@ import me.zhengjie.base.BaseEntity;
 import javax.persistence.*;
 import java.io.Serializable;
 
+import static me.zhengjie.utils.JpaRepositoryUtil.SCHEMA_NAME_1;
+
 /**
 * @author zhanghouying
 * @date 2019-08-24
@@ -31,7 +33,7 @@ import java.io.Serializable;
 @Entity
 @Getter
 @Setter
-@Table(name="mnt_database", schema = "eladmin")
+@Table(name="mnt_database", schema = SCHEMA_NAME_1)
 public class Database extends BaseEntity implements Serializable {
 
     @Id

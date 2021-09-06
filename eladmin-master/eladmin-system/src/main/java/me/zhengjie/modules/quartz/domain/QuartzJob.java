@@ -24,6 +24,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
+import static me.zhengjie.utils.JpaRepositoryUtil.SCHEMA_NAME_1;
+
 /**
  * @author Zheng Jie
  * @date 2019-01-07
@@ -31,7 +33,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @Entity
-@Table(name = "sys_quartz_job", schema = "eladmin")
+@Table(name = "sys_quartz_job", schema = SCHEMA_NAME_1)
 public class QuartzJob extends BaseEntity implements Serializable {
 
     public static final String JOB_KEY = "JOB_KEY";
