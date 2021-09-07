@@ -53,7 +53,7 @@ public class Log  implements Serializable {
     /** 方法名 */
     private String method;
 
-    @Column(columnDefinition ="nvarchar(255)")
+    @Column(columnDefinition ="nvarchar(511)")
     /** 参数 */
     private String params;
 

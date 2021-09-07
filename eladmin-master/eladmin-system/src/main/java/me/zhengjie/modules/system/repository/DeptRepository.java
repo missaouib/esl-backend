@@ -64,6 +64,6 @@ public interface DeptRepository extends JpaRepository<Dept, Long>, JpaSpecificat
      * @param id /
      */
     @Modifying
-    @Query(value = " update sys_dept set sub_count = ?1 where dept_id = ?2 ",nativeQuery = true)
+    @Query(value = " update eladmin.sys_dept set sub_count = ?1 where dept_id = ?2 ",nativeQuery = true)
     void updateSubCntById(Integer count, Long id);
 }
