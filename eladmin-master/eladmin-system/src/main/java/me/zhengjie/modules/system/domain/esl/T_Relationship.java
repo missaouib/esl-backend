@@ -4,9 +4,12 @@ package me.zhengjie.modules.system.domain.esl;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-
 import java.util.Date;
 
 import static me.zhengjie.utils.JpaRepositoryUtil.SCHEMA_NAME_2;
