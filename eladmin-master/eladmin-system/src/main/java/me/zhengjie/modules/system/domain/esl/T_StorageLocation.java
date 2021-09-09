@@ -44,6 +44,12 @@ public class T_StorageLocation {
     private String storageLocation;
 
     /**
+     * 库位的物理二维码编号
+     */
+    @Column(columnDefinition ="nvarchar(50)", name = "storageLocationQrcode")
+    private String storageLocationQRCode;
+
+    /**
      * 库位的系统中（如ERP）编号
      * 原数据库字段：[dbo].[ShelfTierTable].[SysShelftier]
      */

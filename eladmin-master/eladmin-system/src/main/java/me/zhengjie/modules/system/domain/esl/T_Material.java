@@ -45,6 +45,12 @@ public class T_Material {
     private String materialCode;
 
     /**
+     * 物料二维码编号
+     */
+    @Column(name = "materialQrcode", columnDefinition ="nvarchar(50)")
+    private String materialQRCode;
+
+    /**
      * 物料名称
      * 原数据库字段：[dbo].[PartsTable].[itemName]
      */
