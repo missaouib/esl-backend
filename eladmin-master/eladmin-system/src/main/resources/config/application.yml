@@ -1,6 +1,10 @@
 server:
   port: 8000
 
+aims:
+  backend:
+    uri: ${AIMS_BACKEND_URI:http://10.225.106.95:9001}
+
 spring:
   freemarker:
     check-template-location: false

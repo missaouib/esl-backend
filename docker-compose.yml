@@ -22,27 +22,27 @@ services:
       - "6379:6379"
     # volumes:
     #     - ./data/redis:/data
-  client:
-    build: ./eladmin-web-master
-    container_name: client
-    environment:
-      VUE_APP_BASE_API: http://localhost:8000
-      VUE_APP_WS_API: wss://localhost:8000
-    ports:
-      - 8013:80
-    depends_on:
-      - redis
-      - server
-  server:
-    build: ./eladmin-master
-    container_name: server
-    environment:
-      TZ: "Asia/Shanghai"
-      DB_HOST: 10.225.101.111\Test
-      REDIS_HOST: redis
-      DB_USER: ESL_Test
-      DB_PWD: SHZ_esl_app_2021
-    ports:
-      - 8000:8000
-    depends_on:
-      - redis
+  # client:
+  #   build: ./eladmin-web-master
+  #   container_name: client
+  #   environment:
+  #     VUE_APP_BASE_API: http://localhost:8000
+  #     VUE_APP_WS_API: wss://localhost:8000
+  #   ports:
+  #     - 8013:80
+  #   depends_on:
+  #     - redis
+  #     - server
+  # server:
+  #   build: ./eladmin-master
+  #   container_name: server
+  #   environment:
+  #     TZ: "Asia/Shanghai"
+  #     DB_HOST: 10.225.101.111\Test
+  #     REDIS_HOST: redis
+  #     DB_USER: ESL_Test
+  #     DB_PWD: SHZ_esl_app_2021
+  #   ports:
+  #     - 8000:8000
+  #   depends_on:
+  #     - redis
