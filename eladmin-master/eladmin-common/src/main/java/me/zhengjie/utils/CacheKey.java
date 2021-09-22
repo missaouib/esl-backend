@@ -52,6 +52,10 @@ public interface CacheKey {
      */
     String JOB_ID = "job::id:";
     /**
+     * 物料
+     */
+    String MATERIAL_ID = "material::id:";
+    /**
      * 数据字典
      */
     String DICT_NAME = "dict::name:";

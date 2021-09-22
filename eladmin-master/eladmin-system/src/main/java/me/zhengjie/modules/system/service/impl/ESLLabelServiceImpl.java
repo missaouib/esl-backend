@@ -1,6 +1,7 @@
 package me.zhengjie.modules.system.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import me.zhengjie.modules.system.domain.aims.request.LabelLinkRequest;
 import me.zhengjie.modules.system.domain.aims.response.LabelLinkResponse;
 import me.zhengjie.modules.system.domain.aims.response.LabelResponseObject;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class ESLLabelServiceImpl implements ESLLabelService {
@@ -25,6 +27,9 @@ public class ESLLabelServiceImpl implements ESLLabelService {
     public LabelResponseObject[] getLabelsByStationCode(String stationCode) {
         MultiValueMap<String, String> queryVariables = new LinkedMultiValueMap<String, String>();
         queryVariables.add("stationCode", stationCode);
+//        queryVariables.add("status", "UNASSIGNED");
+        queryVariables.add("page", "0");
+        queryVariables.add("size", "1000");
 
         ResponseEntity<LabelResponseObject[]> responseEntity = this.restTemplateService.exchangeWithPathQueryVariablesGetMethod(LabelResponseObject[].class, Label_PATH, queryVariables, HttpMethod.GET);
 

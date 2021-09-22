@@ -1,16 +1,22 @@
 package me.zhengjie.modules.system.domain.esl;
 
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
+import me.zhengjie.base.BaseEntity;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
+import java.io.Serializable;
+import java.sql.Timestamp;
 
 import static me.zhengjie.utils.JpaRepositoryUtil.SCHEMA_NAME_2;
 
@@ -22,7 +28,7 @@ import static me.zhengjie.utils.JpaRepositoryUtil.SCHEMA_NAME_2;
 @Getter
 @Setter
 @Table(name="T_Relationship", schema = SCHEMA_NAME_2)
-public class T_Relationship {
+public class T_Relationship extends BaseEntity implements Serializable {
 
     /**
      * 关系序列号,唯一不重复
@@ -31,8 +37,10 @@ public class T_Relationship {
      * 原数据库字段：[dbo].[RelationTable].[id]
      */
     @Id
-    @GeneratedValue
-    private Integer id;
+    @NotNull(groups = {Update.class})
+    @ApiModelProperty(value = "ID", hidden = true)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     /**
      * 关系所在工厂（Plant），对应SoluM AIMS中的门店编号（StoreCode）
@@ -66,9 +74,13 @@ public class T_Relationship {
      */
     private Integer flag;
 
-    @NotNull
-    private Date createDate;
+    @CreationTimestamp
+    @Column(name = "create_date", updatable = false)
+    @ApiModelProperty(value = "创建时间", hidden = true)
+    private Timestamp createDate;
 
-    @NotNull
-    private Date updateDate;
+    @UpdateTimestamp
+    @Column(name = "update_date")
+    @ApiModelProperty(value = "更新时间", hidden = true)
+    private Timestamp updateDate;
 }

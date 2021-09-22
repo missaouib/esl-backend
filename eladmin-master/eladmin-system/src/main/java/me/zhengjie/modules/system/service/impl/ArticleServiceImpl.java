@@ -1,6 +1,7 @@
 package me.zhengjie.modules.system.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import me.zhengjie.modules.system.domain.aims.request.AddArticleRequestData;
 import me.zhengjie.modules.system.domain.aims.request.Article;
 import me.zhengjie.modules.system.service.ArticleService;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class ArticleServiceImpl implements ArticleService {
@@ -37,7 +39,8 @@ public class ArticleServiceImpl implements ArticleService {
     public Article[] getAllArticles(String stationCode) {
         MultiValueMap<String, String> queryVariables = new LinkedMultiValueMap<String, String>();
         queryVariables.add("stationCode", stationCode);
-
+        queryVariables.add("page", "0");
+        queryVariables.add("size", "1000");
         ResponseEntity<Article[]> responseEntity = this.restTemplateService.exchangeWithPathQueryVariablesGetMethod(
                 Article[].class,
                 ARTICLE_PATH,
@@ -57,6 +60,6 @@ public class ArticleServiceImpl implements ArticleService {
                 ARTICLE_PATH + SINGLE_ARTICLE_PATH,
                 queryVariables,
                 HttpMethod.DELETE);
-
     }
+
 }

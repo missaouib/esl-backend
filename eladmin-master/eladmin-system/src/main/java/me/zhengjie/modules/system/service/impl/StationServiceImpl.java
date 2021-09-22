@@ -1,6 +1,7 @@
 package me.zhengjie.modules.system.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import me.zhengjie.modules.system.domain.aims.response.StationResponseObject;
 import me.zhengjie.modules.system.service.StationService;
 import me.zhengjie.modules.utils.RestTemplateService;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class StationServiceImpl implements StationService {

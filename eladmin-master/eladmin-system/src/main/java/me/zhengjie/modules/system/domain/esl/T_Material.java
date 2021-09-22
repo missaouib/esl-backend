@@ -1,16 +1,18 @@
 package me.zhengjie.modules.system.domain.esl;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
+import me.zhengjie.base.BaseEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-
-import java.util.Date;
+import java.io.Serializable;
 
 import static me.zhengjie.utils.JpaRepositoryUtil.SCHEMA_NAME_2;
 
@@ -22,7 +24,7 @@ import static me.zhengjie.utils.JpaRepositoryUtil.SCHEMA_NAME_2;
 @Getter
 @Setter
 @Table(name="T_Material", schema = SCHEMA_NAME_2)
-public class T_Material {
+public class T_Material extends BaseEntity implements Serializable {
 
     /**
      * 物料序列号,唯一不重复
@@ -31,8 +33,10 @@ public class T_Material {
      * 原数据库字段：[dbo].[PartsTable].[id]
      */
     @Id
-    @GeneratedValue
-    private Integer id;
+    @NotNull(groups = {Update.class})
+    @ApiModelProperty(value = "ID", hidden = true)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     /**
      * 物料所在工厂（Plant），对应SoluM AIMS中的门店编号（StoreCode）
@@ -45,7 +49,8 @@ public class T_Material {
      * 物料编号
      * 原数据库字段：[dbo].[PartsTable].[sku]
      */
-    @Column(name = "materialCode", columnDefinition ="nvarchar(50)")
+
+    @Column(name = "materialCode", columnDefinition ="nvarchar(50)", unique= true)
     private String materialCode;
 
     /**
@@ -95,11 +100,5 @@ public class T_Material {
      * 原数据库无此字段
      */
     private Integer flag;
-
-    @NotNull
-    private Date createDate;
-
-    @NotNull
-    private Date updateDate;
 
 }

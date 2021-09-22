@@ -59,11 +59,12 @@ public class RestTemplateService<T> {
                 .queryParams(queryVariables);
         UriComponents uriComponents = builder.build().encode();
 
-        return this.restTemplate.exchange(
+        ResponseEntity<T> responseEntity = this.restTemplate.exchange(
                 uriComponents.toUri(),
                 httpMethod,
                 entity,
                 t
         );
+        return responseEntity;
     }
 }
